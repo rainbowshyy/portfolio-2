@@ -354,6 +354,38 @@ button {
   animation: rainbowTextAnimated 2s infinite normal linear
 }
 
+.hardmodeTextContainer {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  animation: hardmodeTextAnimated 0.5s infinite alternate-reverse steps(2, end);
+}
+
+.hardmodeText {
+  position: fixed;
+  font-size: 56px;
+  text-align: center;
+  width: 100%;
+}
+
+.shadowText {
+    text-shadow:
+    -2px -2px 0 rgb(6, 6, 6),
+    2px -2px 0 rgb(6, 6, 6),
+    -2px 2px 0 rgb(6, 6, 6),
+    2px 2px 0 rgb(6, 6, 6);
+}
+
+@keyframes hardmodeTextAnimated {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 16px;
+  }
+}
+
 @keyframes rainbowTextAnimated {
   to{
     background-position: -160px;

@@ -346,6 +346,10 @@ function hardmodeStart()
     }
   document.getElementById("hardmodeButton").remove();
   started = true;
+  for (var x = 0; x < document.getElementsByClassName("hardmodeTextContainer").length; x++)
+        {
+          document.getElementsByClassName("hardmodeTextContainer")[x].style.visibility = "visible";
+        }
   for (var i = 0; i < portfolio.length; i++)
     {
       for (var x = 0; x < document.getElementsByClassName(portfolio[i].visibility).length; x++)
