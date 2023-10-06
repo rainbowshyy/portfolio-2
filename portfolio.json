@@ -1,0 +1,140 @@
+{
+  "hardmode": [
+    {
+      "name" : "while(Game) development gifs",
+      "image" : "Images/while6.gif",
+      "width" : 320,
+      "height" : 180,
+      "id" : "pWhileDev",
+      "visibility" : "vWhileDev"
+    },
+    {
+      "name" : "Socials",
+      "image" : "Images/2023.png",
+      "width" : 120,
+      "height" : 120,
+      "id" : "pSocials",
+      "visibility" : "vSocials"
+    },
+    {
+      "name" : "Angel Fire gifs",
+      "image" : "Images/af3.gif",
+      "width" : 320,
+      "height" : 240,
+      "id" : "pAFGif",
+      "visibility" : "vAFGif"
+    },
+    {
+      "name" : "Ukens Joker gifs",
+      "image" : "Images/joker4.gif",
+      "width" : 360,
+      "height" : 270,
+      "id" : "pJokerGif",
+      "visibility" : "vJokerGif"
+    },
+    {
+      "name" : "Favortown gifs",
+      "image" : "Images/favortown.gif",
+      "width" : 320,
+      "height" : 180,
+      "id" : "pFavorGif",
+      "visibility" : "vFavorGif"
+    },
+    {
+      "name" : "Washbear gifs",
+      "image" : "Images/washbear_2.gif",
+      "width" : 320,
+      "height" : 180,
+      "id" : "pWashbearGif",
+      "visibility" : "vWashbearGif"
+    },
+    {
+      "name" : "Taverna gifs",
+      "image" : "Images/taverna_gif.gif",
+      "width" : 320,
+      "height" : 180,
+      "id" : "pTavernaGif",
+      "visibility" : "vTavernaGif"
+    },
+    {
+      "name" : "Molegame gifs",
+      "image" : "Images/molegame.gif",
+      "width" : 240,
+      "height" : 135,
+      "id" : "pMolegameGif",
+      "visibility" : "vMolegameGif"
+    },
+    {
+      "name" : "Spells gifs",
+      "image" : "Images/spells2.gif",
+      "width" : 320,
+      "height" : 180,
+      "id" : "pSpellsGif",
+      "visibility" : "vSpellsGif"
+    },
+    {
+      "name" : "Office gifs",
+      "image" : "Images/office.gif",
+      "width" : 420,
+      "height" : 180,
+      "id" : "pOfficeGif",
+      "visibility" : "vOfficeGif"
+    },
+    {
+      "name" : "Zombie gifs",
+      "image" : "Images/jszombie.gif",
+      "width" : 320,
+      "height" : 155,
+      "id" : "pZombieGif",
+      "visibility" : "vZombieGif"
+    },
+    {
+      "name" : "Taverna",
+      "image" : "Images/taverna.png",
+      "width" : 350,
+      "height" : 496,
+      "id" : "pTaverna",
+      "visibility" : "vTaverna"
+    },
+    {
+      "name" : "Washbear",
+      "image" : "Images/washbear.png",
+      "width" : 320,
+      "height" : 320,
+      "id" : "pWashbear",
+      "visibility" : "vWashbear"
+    },
+    {
+      "name" : "Angel Fire",
+      "image" : "Images/angelFire.png",
+      "width" : 248,
+      "height" : 350,
+      "id" : "pAngelFire",
+      "visibility" : "vAngelFire"
+    },
+    {
+      "name" : "While(Game)",
+      "image" : "Images/whileGame.png",
+      "width" : 200,
+      "height" : 300,
+      "id" : "pWhile",
+      "visibility" : "vWhile"
+    },
+    {
+      "name" : "About me",
+      "image" : "Images/2023.png",
+      "width" : 120,
+      "height" : 120,
+      "id" : "pAbout",
+      "visibility" : "vAbout"
+    },
+    {
+      "name" : "Showreel",
+      "image" : "Images/2023.png",
+      "width" : 120,
+      "height" : 120,
+      "id" : "showreel",
+      "visibility" : "vShowreel"
+    }
+  ]
+}

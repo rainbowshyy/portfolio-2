@@ -1,0 +1,757 @@
+@font-face {
+    font-family: 'whilegamefontregular';
+    src: url('whilegamefont-webfont.woff2') format('woff2'),
+         url('whilegamefont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+  overflow: hidden;
+  font-family: 'whilegamefontregular', "Consolas", "Lucida Console", monospace;
+  color: rgb(242,242,242);
+  font-size: 8px;
+  width: 100%;
+  height: 100%;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+}
+
+img {
+  image-rendering: pixelated;
+}
+
+body {
+  background: rgb(82,82,82);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+  background: rgb(6, 6, 6);
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+#content {
+  flex-basis: 50%;
+  align-content: center;
+  justify-content: center;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.content_window {
+  background: rgb(6, 6, 6);
+  margin: 8px;
+  margin-bottom: 72px;
+  padding: 8px;
+  border: 2px solid rgb(242, 242, 242);
+  transform-origin: bottom left;
+  animation: window_popup 0.2s 0.2s ease-out both;
+  overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 24px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgb(6,6,6);
+  border: 2px solid rgb(242, 242, 242);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(165,165,165);
+  border: 2px solid rgb(242, 242, 242);
+  transition: background-color 0.2s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(242,242,242);
+  border: 2px solid rgb(242, 242, 242);
+}
+
+.content_window_bar {
+  position: inherit;
+  margin: -8;
+  margin-bottom: 8px;
+  width: 100% + 16px;
+  height: 16px;
+  border-bottom: 2px solid rgb(242, 242, 242);
+  background-color: rgb(165, 165, 165);
+  font-size: 8px;
+  line-height: 20px;
+  padding-left: 4px;
+  color: rgb(6, 6, 6);
+}
+
+p {
+  font-size: 8px;
+  line-height: 150%;
+  margin: 16px;
+  text-align: inherit;
+}
+
+.sidebar > p {
+  font-size: 8px;
+  text-align: center;
+}
+
+.content_window_bar_button {
+  position: absolute;
+  right: -2;
+  top: -2;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgb(242, 242, 242);
+  font-size: 16px;
+  text-align: center;
+  line-height: 20px;
+  transition: color, background-color 0.2s;
+}
+
+.content_window_bar_button:hover {
+  background-color: rgb(242, 242, 242);
+  background: rgb(6,6,6);
+  cursor: pointer
+}
+
+.image_display {
+  width: 120px;
+  margin: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image_poster {
+  width: 200px;
+  height: 300px;
+  margin: 16px;
+  border: solid 2px rgb(242, 242, 242);
+}
+
+.square {
+  height: 200px;
+}
+
+iframe {
+  width: 100%;
+  height: 56.25%;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  margin: 2%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  margin: 2%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+li {
+  font-size: 8px;
+  line-height: 100%;
+  margin: 8px;
+}
+
+.poster_flex {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.poster_p {
+  flex-basis: 1;
+  margin: 8px;
+}
+
+a {
+  color: rgb(254, 0, 0);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(254, 0, 0);
+}
+
+a:hover {
+  color: rgb(230, 0, 0);
+}
+
+@keyframes window_popup {
+  0% {transform: scale(0, 0);}
+  100% {transform: scale(1, 1);}
+}
+
+.social_buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_button_container {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin: 8px;
+}
+
+.social_button_icon {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  image-rendering: pixelated;
+}
+
+.linkedin {
+  background-image: url(Images/linkedin1.png);
+}
+
+.itch {
+  background-image: url(Images/itch1.png);
+}
+
+.x {
+  background-image: url(Images/x1.png);
+}
+
+.social_button_container:hover .social_button_icon {
+  opacity: 1.0;
+  cursor: pointer;
+}
+
+.linkedin_hover {
+  background-image: url(Images/linkedin2.png);
+  opacity: 0.0;
+}
+
+.itch_hover {
+  background-image: url(Images/itch2.png);
+  opacity: 0.0;
+}
+
+.x_hover {
+  background-image: url(Images/x2.png);
+  opacity: 0.0;
+}
+
+.sidebar > a {
+  text-align: center;
+  font-size: 16px;
+  color: rgb(242, 242, 242);
+  text-decoration: none;
+  margin: 32px;
+  transition: transform 0.5s;
+}
+
+.sidebar > a:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.gif_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.js_gif {
+  width: 320px;
+  height: 155px;
+}
+
+.washbear_square {
+  width: 342px;
+  height: 342px;
+}
+
+.washbear_gif {
+  width: 320px;
+  height: 180px;
+}
+
+canvas {
+  border: 1px solid rgb(242, 242, 242);
+  width: 256px;
+  height: 240px;
+  transform-origin: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.canvas_container {
+  position: relative;
+  width: 256px;
+  height: 240px;
+}
+
+.canvas_clickable, canvas {
+  position: absolute;
+}
+.hardmode_pile {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  width: 120px;
+  height: 90px;
+  z-index: 100px;
+  left: 63px;
+  bottom: 0px;
+}
+
+.hardmode {
+  opacity: 1.0;
+  transition: opacity 3s;
+}
+
+button {
+  font-family: 'whilegamefontregular', "Consolas", "Lucida Console", monospace; 
+  padding: 8px;
+  background: none;
+  border: 1px solid rgb(242, 242, 242);
+  color: rgb(242, 242, 242);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.rainbowText, button:hover {
+  background-image: url(Images/rainbow.png);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  background-size: 160px 160px;
+  background-position: 160px;
+  animation: rainbowTextAnimated 2s infinite normal linear
+}
+
+@keyframes rainbowTextAnimated {
+  to{
+    background-position: -160px;
+  }
+}
+
+@media only screen and (min-width:1600px){
+  h1 {
+    font-size: 48px
+  }
+  h2 {
+    font-size: 32px;
+  }
+  .sidebar > a {
+    font-size: 32px;
+  }
+  .social_button_icon {
+    width: 64px;
+    height: 64px;
+  }
+  .social_button_container {
+    width: 64px;
+    height: 64px;
+  }
+  li {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  .sidebar > p {
+    font-size: 16px;
+  }
+  .content_window_bar_button {
+    right: -2;
+    top: -2;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .content_window_bar {
+    margin: -8;
+    margin-bottom: 8px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .image_display {
+    width: 240px;
+  }
+  #favortown {
+    width: 640px;
+    height 360px;
+  }
+  #office {
+    width: 840px;
+    height: 360px;
+  }
+  .canvas_container {
+    width: 768px;
+    height: 720px;
+  }
+  canvas {
+    transform: scale(3,3);
+    left: 256px;
+    bottom: 240px;
+  }
+  .hardmode_pile {
+    width: 360px;
+    height: 270px;
+    left: 189px;
+  }
+}
+
+@media only screen and (min-width:3200px){
+  h1 {
+    font-size: 96px
+  }
+  h2 {
+    font-size: 64px;
+  }
+  .sidebar > a {
+    font-size: 64px;
+  }
+  .social_button_icon {
+    width: 128px;
+    height: 128px;
+  }
+  .social_button_container {
+    width: 128px;
+    height: 128px;
+  }
+  li {
+    font-size: 32px;
+    line-height: 64px;
+  }
+  p {
+    font-size: 32px;
+    line-height: 64px;
+    margin: 32px;
+  }
+  .sidebar > p {
+    font-size: 32px;
+  }
+  .content_window_bar_button {
+    right: -2;
+    top: -2;
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    line-height: 64px;
+    border: 4px solid rgb(242, 242, 242);
+  }
+  .content_window_bar {
+    margin: -16;
+    margin-bottom: 8px;
+    height: 48px;
+    font-size: 32px;
+    line-height: 52px;
+    border: 4px solid rgb(242, 242, 242);
+  }
+  .image_poster {
+    width: 400px;
+    height: 600px;
+    margin: 16px;
+    border: solid 4px rgb(242, 242, 242);
+  }
+  .square {
+    height: 400px;
+  }
+  .content_window {
+    background: rgb(6, 6, 6);
+    margin: 16px;
+    margin-bottom: 144px;
+    padding: 16px;
+    border: 4px solid rgb(242, 242, 242);
+  }
+  .image_display {
+    width: 480px;
+  }
+  #favortown {
+    width: 1280px;
+    height 720px;
+  }
+  #office {
+    width: 1680px;
+    height: 720px;
+  }
+  .molegame {
+    width: 960px;
+    height: 540px;
+  }
+  #taverna {
+    width: 1280px;
+    height: 720px;
+  }
+  .washbear_square {
+    width: 684px;
+    height: 684px;
+  }
+  .washbear_gif {
+    width: 640px;
+    height: 360px;
+  }
+  .while1_gif {
+    width: 640px;
+    height: 450px;
+  }
+  .while2_gif {
+    width: 720px;
+    height: 520px;
+  }
+  .while3_gif {
+    width: 640px;
+    height: 540px;
+  }
+  .while4_gif {
+    width: 1920px;
+    height: 1080px;
+  }
+  .af {
+    width: 1280px;
+    height: 960px;
+  }
+  .js_gif {
+    width: 640px;
+    height: 310px;
+  }
+  .joker {
+    width: 720px;
+    height: 540px;
+  }
+}
+
+@media only screen and (max-width:920px)
+{
+  html {
+    overflow: auto;
+  }
+  body {
+    display: inline;
+    flex-direction: column;
+    background: rgb(82,82,82);
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .sidebar {
+    height: 200px;
+    flex-direction: row;
+    background: rgb(6, 6, 6);
+    align-content: center;
+    justify-content: center;
+  }
+  .image_display {
+    width: 200px;
+    margin: 16px;
+    
+  }
+
+  #content {
+    align-content: center;
+    justify-content: center;
+    scroll-behavior: smooth;
+    overflow-y: inherit;
+  }
+  #navigation {
+    visibility: hidden;
+  }
+  p {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  .sidebar > p {
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+    margin-right: 16px;
+    margin-left: 4px;
+    flex-basis: 50%;
+  }
+  li {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  .social_button_icon {
+    width: 64px;
+    height: 64px;
+    opacity: 1.0;
+  }
+  .social_button_container {
+    width: 64px;
+    height: 64px;
+  }
+  #thisisme {
+    visibility: hidden;
+    flex-basis: 0%;
+    margin: 0;
+    font-size: 0px;
+  }
+  #favortown {
+    width: 640px;
+    height 360px;
+  }
+  .af {
+    width: 320px;
+    height: 240px;
+  }
+  .while4_gif {
+    width: 480px;
+    height: 270px;
+  }
+  .canvas_container {
+    width: 512;
+    height: 480px;
+  }
+  canvas {
+    transform: scale(2,2);
+    left: 128px;
+    bottom: 120px;
+  }
+  .hardmode_pile {
+    width: 240px;
+    height: 180px;
+    left: 126px;
+  }
+}
+
+@media only screen and (max-width:720px)
+{
+  .gif_row {
+    flex-direction: column;
+  }
+  
+  .gif_row > img {
+    margin: 16px;
+  }
+}
+
+@media only screen and (max-width:600px)
+{
+  h1 {
+    font-size: 24px;
+  }
+  iframe {
+    height: 280px;
+  }
+  .poster_flex {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+  }
+  .social_button_icon {
+    width: 32px;
+    height: 32px;
+  }
+  .social_button_container {
+    width: 32px;
+    height: 32px;
+  }
+  .sidebar > p {
+    right: 16;
+    top: 120;
+    position: absolute;
+    font-size: 8px;
+    text-align: center;
+    margin: auto;
+    margin-right: 2px;
+    margin-left: 2px;
+    flex-basis: 50%;
+  }
+  .image_display {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-left: 32px;
+  }
+  .sidebar {
+    height: 160px;
+  }
+  li {
+    line-height: 32px;
+  }
+  canvas {
+    transform: scale(1, 1);
+    left: 0;
+    bottom: 0;
+  }
+  .canvas_container {
+    width: 256px;
+    height: 240px;
+  }
+  .hardmode_pile {
+    width: 120px;
+    height: 90px;
+    left: 63px;
+    bottom: 0px;
+  }
+}
+@media only screen and (max-width:390px)
+{
+  h1 {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width:300px)
+{
+  .image_display {
+    width: 80px;
+    height: 80px;
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+  .sidebar {
+    height: 120px;
+  }
+  p {
+    font-size: 8px;
+    line-height: 16px;
+  }
+  .sidebar > p {
+    width: 100%;
+    top: 100;
+    position: absolute;
+    font-size: 8px;
+  }
+  li {
+    font-size: 8px;
+    line-height: 32px;
+  }
+}
