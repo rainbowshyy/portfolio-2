@@ -27,4 +27,22 @@ table, th, tr {
   width: 40px;
   height: 40px;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapElement img {
+  width: 48px;
+  height: 48px;
+}
+
+#hoverInfo {
+  position: absolute;
+  border: 1px solid black;
+  padding: 8px;
+  background-color: white;
+  visibility: hidden;
+  z-index: 100;
+  pointer-events: none;
 }
