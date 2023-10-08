@@ -247,6 +247,7 @@ function simenState()
       simenStateCount = 0;
       for (var x = 0; x < document.getElementsByClassName(portfolio[foundIndex].visibility).length; x++)
         {
+          document.getElementsByClassName(portfolio[foundIndex].visibility)[x].classList.remove("zeroHeight");
           document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.opacity = 1.0;
         }
       document.getElementById(portfolio[foundIndex].id).scrollIntoView();
@@ -355,6 +356,7 @@ function hardmodeStart()
       for (var x = 0; x < document.getElementsByClassName(portfolio[i].visibility).length; x++)
         {
           document.getElementsByClassName(portfolio[i].visibility)[x].style.opacity = 0.0;
+          document.getElementsByClassName(portfolio[i].visibility)[x].classList.add("zeroHeight")
         }
       pool.push(i);
     }

@@ -377,6 +377,15 @@ button {
     2px 2px 0 rgb(6, 6, 6);
 }
 
+.zeroHeight {
+  overflow: hidden;
+  height: 0px;
+}
+
+.vforest  {
+  opacity: 0.0;
+}
+
 @keyframes hardmodeTextAnimated {
   from {
     top: 0px;
