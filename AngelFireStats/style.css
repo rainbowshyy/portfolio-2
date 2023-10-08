@@ -1,3 +1,30 @@
+html {
+  overflow-x:  hidden;
+}
+
 table, th, tr {
   border: 1px solid black;
+}
+
+.mapContainer {
+  position: relative;
+  width: 80vw;
+  height: 500px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.map {
+  width: 5200px;
+  height: 480px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.mapElement {
+  background-color: aqua;
+  width: 40px;
+  height: 40px;
+  position: absolute;
 }

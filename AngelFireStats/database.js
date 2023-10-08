@@ -27,6 +27,18 @@ function getStats()
   var turretTotalMostBought = {"Cone": 0, "Circle": 0, "Aim": 0, "Laser": 0};
   var turretTotalMostBoughtWins = {"Cone": 0, "Circle": 0, "Aim": 0, "Laser": 0};
   
+  var turretTotalHits = {"cone": 0, "circle": 0, "aim": 0, "laser": 0, "ground": 0};
+  
+  var turretCoordinates = [];
+  for (var x = 0; x < 130; x++)
+    {
+      turretCoordinates.push([]);
+      for (var y = 0; y < 12; y++)
+        {
+          turretCoordinates[x].push({"Cone": 0, "Circle": 0, "Aim": 0, "Laser": 0});
+        }
+    }
+  
   
   //EACH MATCH
   for (var i = 0; i < stats.length; i++)
@@ -47,10 +59,19 @@ function getStats()
                   //IF BUILD TURRET
                   if (stats[i].rounds[r].turrets[t].action == "build")
                     {
-                      console.log(stats[i].rounds[r].turrets[t].type + " in match " + i + " round " + r);
                       turretMatchBuy[stats[i].rounds[r].turrets[t].type] += 1;
                       turretTotalBuy[stats[i].rounds[r].turrets[t].type] += 1;
+                      turretCoordinates[20 + stats[i].rounds[r].turrets[t].x][(stats[i].rounds[r].turrets[t].y * -1) + 3][stats[i].rounds[r].turrets[t].type] += 1;
+                      console.log(20 + stats[i].rounds[r].turrets[t].x + " + " + ((stats[i].rounds[r].turrets[t].y * -1) + 3)  + stats[i].rounds[r].turrets[t].type)
                     }
+                }
+            }
+          //EACH ATTACKER HIT
+          if (stats[i].rounds[r].attackerHits != undefined)
+            {
+              for (var a = 0; a < stats[i].rounds[r].attackerHits.length; a++)
+                {
+                  turretTotalHits[stats[i].rounds[r].attackerHits[a].turretType] += 1;
                 }
             }
         }
@@ -98,4 +119,32 @@ function getStats()
   document.getElementById("circle").children[3].innerHTML = turretTotalMostBoughtWins["Circle"] / turretTotalMostBought["Circle"];
   document.getElementById("aim").children[3].innerHTML = turretTotalMostBoughtWins["Aim"] / turretTotalMostBought["Aim"];
   document.getElementById("laser").children[3].innerHTML = turretTotalMostBoughtWins["Laser"] / turretTotalMostBought["Laser"];
+  
+  document.getElementById("cone").children[4].innerHTML = turretTotalHits["cone"];
+  document.getElementById("circle").children[4].innerHTML = turretTotalHits["circle"];
+  document.getElementById("aim").children[4].innerHTML = turretTotalHits["aim"];
+  document.getElementById("laser").children[4].innerHTML = turretTotalHits["laser"];
+  
+  for (var x = 0; x < turretCoordinates.length; x++)
+    {
+      for (var y = 0; y < turretCoordinates[x].length; y++)
+        {
+          var create = false;
+          for (var t = 0; t < Object.keys(turretCoordinates[x][y]).length; t++)
+            {
+              if (turretCoordinates[x][y][Object.keys(turretCoordinates[x][y])[t]] > 0)
+                {
+                  create = true;
+                }
+            }
+          if (create)
+            {
+              var newDiv = document.createElement("div");
+              newDiv.classList.add("mapElement");
+              document.getElementById("classic").appendChild(newDiv);
+              newDiv.style.top = y * 40;
+              newDiv.style.left = x * 40;
+            }
+        }
+    }
 }
