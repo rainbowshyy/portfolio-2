@@ -41,8 +41,8 @@ body {
 
 #content {
   flex-basis: 50%;
-  align-content: center;
-  justify-content: center;
+  /*align-content: center;
+  justify-content: center;*/
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
