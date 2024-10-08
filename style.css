@@ -105,6 +105,7 @@ body {
   line-height: 20px;
   padding-left: 4px;
   color: rgb(6, 6, 6);
+  overflow: hidden;
 }
 
 p {
@@ -130,6 +131,7 @@ p {
   text-align: center;
   line-height: 20px;
   transition: color, background-color 0.2s;
+  overflow: hidden;
 }
 
 .content_window_bar_button:hover {
