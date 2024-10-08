@@ -19,6 +19,8 @@ html {
   -webkit-font-smoothing : none;
   max-width: 100%;
   z-index: 1;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -33,6 +35,8 @@ body {
   height: 100%;
   overflow-x: hidden;
   max-width: 100vw;
+  left: 0;
+  margin: 0;
 }
 
 .sidebar {
@@ -425,10 +429,10 @@ canvas {
   pointer-events: none;
   transform-origin: top left;
   z-index: 110;
+  border: none;
 }
 
 #ditherContainer {
-  border:1px solid transparent;
   position: fixed; 
   width: 100%;
   height: 100%;
