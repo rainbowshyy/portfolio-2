@@ -59,6 +59,7 @@ var ditherArea = {
         this.context.imageSmoothingEnabled = false;
         var scale = Math.max(document.documentElement.clientWidth / 240, document.documentElement.clientHeight / 240);
         this.canvas.style.transform = "scale(" + scale + "," + scale + ")";
+        this.canvas.parentElement.style.backgroundColor = "transparent";  
     },
     clear : function () {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);

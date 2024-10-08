@@ -446,6 +446,7 @@ canvas {
   overflow: clip;
   pointer-events: none;
   z-index: 110;
+  background-color: black;
 }
 
 @media only screen and (min-width:1600px){
