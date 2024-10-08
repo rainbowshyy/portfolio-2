@@ -19,7 +19,7 @@ var grid = {
     },
     draw : function()
     {
-        c = gameArea.context;
+        c = ditherArea.context;
         for (var x = 0; x < this.pixels.length; x++)
             {
                 for (var y = 0; y < this.pixels.length; y++)
@@ -50,14 +50,14 @@ var grid = {
 };
 
 //Defining the canvas area
-var gameArea = {
+var ditherArea = {
     canvas : document.getElementById("dither"),
     init : function () {
         this.canvas.width = 240;
         this.canvas.height = 240;
         this.context = this.canvas.getContext("2d");
         this.context.imageSmoothingEnabled = false;
-        var scale = Math.max(document.documentElement.clientWidth / 960, document.documentElement.clientHeight / 540);
+        var scale = Math.max(document.documentElement.clientWidth / 240, document.documentElement.clientHeight / 240);
         this.canvas.style.transform = "scale(" + scale + "," + scale + ")";
     },
     clear : function () {
@@ -73,14 +73,14 @@ window.requestAnimFrame = (function(){
 
 function animateFrame()
 {
-    gameArea.clear();
+    ditherArea.clear();
     grid.step();
     grid.draw();
     requestAnimFrame(animateFrame);
 }
 
 grid.init();
-gameArea.init();
+ditherArea.init();
 grid.draw();
 window.addEventListener('load', function () {
     setTimeout(animateFrame, 300);
