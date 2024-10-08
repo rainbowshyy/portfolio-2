@@ -9,7 +9,7 @@ fetch("portfolio.json")
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
           window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame})();
+          window.mozRequestAnimationFrame;})();
 
 
 var overPile = false;
@@ -55,7 +55,7 @@ var gameArea = {
   clear : function () {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
-}
+};
 
 function visualObject(x,y,width,height,sprites) {
   this.x = x;
@@ -72,7 +72,7 @@ function visualObject(x,y,width,height,sprites) {
   this.draw = function () {
     var c = gameArea.context;
     c.drawImage(this.sprites[this.frame], this.x, this.y, this.width, this.height);
-  }
+  };
 }
 
 var ohno = false;
@@ -256,7 +256,7 @@ function simenState()
 }
 
 function gameTick() {
-  simenState()
+  simenState();
 }
 
 function draw() {
@@ -353,10 +353,10 @@ function hardmodeStart()
         }
   for (var i = 0; i < portfolio.length; i++)
     {
-      for (var x = 0; x < document.getElementsByClassName(portfolio[i].visibility).length; x++)
+      for (x = 0; x < document.getElementsByClassName(portfolio[i].visibility).length; x++)
         {
           document.getElementsByClassName(portfolio[i].visibility)[x].style.opacity = 0.0;
-          document.getElementsByClassName(portfolio[i].visibility)[x].classList.add("zeroHeight")
+          document.getElementsByClassName(portfolio[i].visibility)[x].classList.add("zeroHeight");
         }
       pool.push(i);
     }
