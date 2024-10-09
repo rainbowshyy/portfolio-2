@@ -64,9 +64,14 @@ body {
   margin-bottom: 72px;
   padding: 8px;
   border: 2px solid rgb(242, 242, 242);
-  transform-origin: bottom left;
-  animation: window_popup 0.2s 0.2s ease-out both;
+  transform-origin: top left;
   overflow-x: hidden;
+  transform: scale(0,0);
+  transition: transform 0.3s 0.4s ease-in-out;
+}
+
+.content_window_animation {
+  transform: scale(1,1);
 }
 
 /* width */

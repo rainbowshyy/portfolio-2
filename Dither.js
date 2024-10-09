@@ -13,7 +13,7 @@ var grid = {
                     {
                         this.pixels[y].push(0);
                         var rand = Math.random();
-                        this.weight[y].push(rand * rand + 0.08);
+                        this.weight[y].push(rand * rand + 0.2);
                     }
             }
     },
@@ -42,7 +42,7 @@ var grid = {
                     {
                         if (this.pixels[x][y] < 1)
                             {
-                                this.pixels[x][y] += this.weight[x][y] * y * vert + 0.001;
+                                this.pixels[x][y] += this.weight[x][y] * (Math.pow(y * vert, 2) * 0.5 + 0.02);
                             }
                     }
             }
