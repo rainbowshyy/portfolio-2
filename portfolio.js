@@ -250,13 +250,34 @@ function simenState()
           document.getElementsByClassName(portfolio[foundIndex].visibility)[x].classList.remove("zeroHeight");
           document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.opacity = 1.0;
         }
-      document.getElementById(portfolio[foundIndex].id).scrollIntoView();
+      setTimeout(function() {
+        document.getElementById(portfolio[foundIndex].id).scrollIntoView();
+        cameraShakeStep = 96;
+      }, 500);
       found = null;
     }
 }
 
 function gameTick() {
   simenState();
+}
+
+var cameraShakeStep = 0;
+function cameraShake(x)
+{
+  if (x == 0)
+    {
+      document.body.style.top = 0;
+      document.body.style.left = 0;
+      return;
+    }
+  
+  var vert = (Math.floor(x / 12) % 2 == 0) ? 1 : -1;
+  var hor = (Math.floor(x / 8) % 2 == 0) ? 1 : -1;
+  var intensity = Math.ceil((1 - (96 - x) / 96) * 3);
+  
+  document.body.style.top = intensity * 4 * vert;
+  document.body.style.left = intensity * 4 * hor;
 }
 
 function draw() {
@@ -298,6 +319,12 @@ function draw() {
   if (look)
     {
       lookText.draw();
+    }
+  
+  if (cameraShakeStep > 0)
+    {
+      cameraShakeStep -= 1;
+      cameraShake(cameraShakeStep);
     }
   
   window.requestAnimFrame(draw);
@@ -360,6 +387,9 @@ function hardmodeStart()
         }
       pool.push(i);
     }
+  
+  cameraShakeStep = 96;
+  
   setInterval(gameTick, 18);
   window.requestAnimFrame(draw);
 }

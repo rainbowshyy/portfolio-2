@@ -28,12 +28,13 @@ img {
 }
 
 body {
+  position: absolute;
   background: rgb(82,82,82);
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   max-width: 100vw;
   left: 0;
   margin: 0;
@@ -41,7 +42,7 @@ body {
 
 .sidebar {
   background: rgb(6, 6, 6);
-  flex-basis: 25%;
+  flex-basis: 20%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -49,7 +50,7 @@ body {
 }
 
 #content {
-  flex-basis: 50%;
+  flex-basis: 60%;
   max-width: 100vw;
   /*align-content: center;
   justify-content: center;*/
@@ -330,6 +331,7 @@ canvas {
   height: 240px;
   overflow: hidden;
   border: 2px solid rgb(242, 242, 242);
+  margin-bottom: 60px;
 }
 
 .canvas_clickable, canvas {
@@ -348,7 +350,7 @@ canvas {
 
 .hardmode {
   opacity: 1.0;
-  transition: opacity 3s;
+  transition: opacity 1s;
 }
 
 button {
