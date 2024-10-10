@@ -350,7 +350,7 @@ canvas {
 
 .hardmode {
   opacity: 1.0;
-  transition: opacity 1s;
+  transition: opacity transform 1s cubic-bezier(.86, .39, .91, .59);
 }
 
 button {
@@ -654,6 +654,7 @@ canvas {
     overflow-x: hidden;
   }
   body {
+    position: relative;
     display: inline;
     flex-direction: column;
     background: rgb(82,82,82);

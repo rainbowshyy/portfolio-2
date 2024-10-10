@@ -245,15 +245,31 @@ function simenState()
     {
       simen.frame = 12;
       simenStateCount = 0;
+      var rectElement;
       for (var x = 0; x < document.getElementsByClassName(portfolio[foundIndex].visibility).length; x++)
         {
           document.getElementsByClassName(portfolio[foundIndex].visibility)[x].classList.remove("zeroHeight");
           document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.opacity = 1.0;
+          document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.transform = "scale(1,1)";
+          //document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.zIndex = 120;
+          if (x == 0)
+            {
+              rectElement = document.getElementsByClassName(portfolio[foundIndex].visibility)[x];
+            }
         }
       setTimeout(function() {
-        document.getElementById(portfolio[foundIndex].id).scrollIntoView();
+        document.getElementById(portfolio[foundIndex].id).scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+      }, 250);
+      setTimeout(function() {
         cameraShakeStep = 96;
-      }, 500);
+        var rect = rectElement.getBoundingClientRect();
+        console.log(rect);
+        grid.doParticles(rect);
+      }, 1000);
       found = null;
     }
 }
@@ -384,11 +400,19 @@ function hardmodeStart()
         {
           document.getElementsByClassName(portfolio[i].visibility)[x].style.opacity = 0.0;
           document.getElementsByClassName(portfolio[i].visibility)[x].classList.add("zeroHeight");
+          document.getElementsByClassName(portfolio[i].visibility)[x].style.transform = "scale(1,1.1)";
+          document.getElementsByClassName(portfolio[i].visibility)[x].style.transformOrigin = "center";
         }
       pool.push(i);
     }
   
   cameraShakeStep = 96;
+  
+  document.getElementById("hardmode").scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
   
   setInterval(gameTick, 18);
   window.requestAnimFrame(draw);
