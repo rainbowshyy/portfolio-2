@@ -263,13 +263,13 @@ function simenState()
             block: 'center',
             inline: 'center'
         });
-      }, 250);
+      }, 500);
       setTimeout(function() {
         cameraShakeStep = 96;
         var rect = rectElement.getBoundingClientRect();
         console.log(rect);
         grid.doParticles(rect);
-      }, 1000);
+      }, 1250);
       found = null;
     }
 }

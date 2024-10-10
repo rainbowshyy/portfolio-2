@@ -9,6 +9,14 @@
       "visibility" : "vWhileDev"
     },
     {
+      "name" : "Filiokus experience",
+      "image" : "Images/calbombaPixel.gif",
+      "width" : 128,
+      "height" : 128,
+      "id" : "pFiliokusExperience",
+      "visibility" : "vFiliokusExperience"
+    },
+    {
       "name" : "Socials",
       "image" : "Images/2023.png",
       "width" : 120,

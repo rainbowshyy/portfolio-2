@@ -350,7 +350,7 @@ canvas {
 
 .hardmode {
   opacity: 1.0;
-  transition: opacity transform 1s cubic-bezier(.86, .39, .91, .59);
+  transition: opacity transform 1s cubic-bezier(.91, .15, .91, .59);
 }
 
 button {
@@ -454,6 +454,23 @@ canvas {
   pointer-events: none;
   z-index: 110;
   background-color: black;
+}
+
+.filiokusWindow {
+  background-color: #092a46;
+}
+
+.filiokusTitle {
+  width: 154px;
+  margin-left: 16px;
+}
+
+.filiokusTitle:hover {
+  transform: scale(1.1,1.1);
+}
+
+#thisismeMobile {
+  visibility: hidden;
 }
 
 @media only screen and (min-width:1600px){
@@ -667,19 +684,27 @@ canvas {
   }
 
   .sidebar {
-    height: 200px;
+    height: 100px;
     flex-direction: row;
     background: rgb(6, 6, 6);
     align-content: center;
     justify-content: center;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 200;
+    overflow: hidden;
+    flex-wrap: nowrap;
   }
+  
   .image_display {
-    width: 200px;
-    margin: 16px;
+    width: 0px;
+    margin: 0px;
     
   }
 
   #content {
+    padding-top: 100px;
     align-content: center;
     justify-content: center;
     scroll-behavior: smooth;
@@ -715,6 +740,12 @@ canvas {
   .social_button_container {
     width: 64px;
     height: 64px;
+    margin: 4px;
+  }
+  
+  .social_buttons {
+    width: auto;
+    flex-basis: 35%;
   }
   #thisisme {
     visibility: hidden;
@@ -722,6 +753,16 @@ canvas {
     margin: 0;
     font-size: 0px;
   }
+  
+  #thisismeMobile {
+    visibility: visible;
+    flex-basis: 65%;
+    font-size:12px;
+    text-align: center;
+    align-content: center;
+    margin: 8px;
+  }
+  
   #favortown {
     width: 640px;
     height: 360px;
@@ -794,15 +835,7 @@ canvas {
     margin-left: 2px;
     flex-basis: 50%;
   }
-  .image_display {
-    width: 120px;
-    height: 120px;
-    margin: auto;
-    margin-left: 32px;
-  }
-  .sidebar {
-    height: 160px;
-  }
+  
   li {
     line-height: 32px;
   }
