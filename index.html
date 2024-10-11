@@ -1,7 +1,7 @@
 <html>
   <meta charset="UTF-8">
   <head>
-    <title>Simen Barstad Skjevdal - Game Designer</title>
+    <title>Simen Barstad Skjevdal</title>
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="Simen Barstad Skjevdal - sometimes rainbowshyy ig"/>
     <meta name="url" content="https://rainbowshyy.com/">
@@ -19,6 +19,7 @@
         <div class="hardmodeText rainbowText">HARDMODE</div>
       </div>
       <div class="sidebar hardmode vSocials">
+        <div class="vMoney hardmode zeroHeight"></div>
         <span id="thisismeMobile">Simen Barstad Skjevdal<br><span class="rainbowText">Programmer / Game Designer</span><br><a href="https://www.filiokus.io/" target="_blank">Filiokus Game Studio</a></span>
         <img class="image_display" src="Images/2023.png" id="pSocials">
         <p id="thisisme"><span class="rainbowText">Programmer / Game Designer</span><br>Currently this ^ (+ other hats) at <a href="https://www.filiokus.io/" target="_blank">Filiokus Game Studio</a></p>
@@ -58,6 +59,7 @@
             name.txt
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <h1 id="name_title">Simen Barstad Skjevdal</h1>
           <p style="margin-left: 12px">(I also go by rainbowshyy some places)</p>
         </div>
@@ -66,6 +68,7 @@
             showreel.mp4
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <iframe src="https://www.youtube.com/embed/YhkS3zEuXOU?si=F2hyxj2F1_IXco6Q" title="Showreel 2021" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="content_window hardmode vAbout" id="aboutme">
@@ -86,6 +89,10 @@
             experience.txt
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
+          <div class="vMoney hardmode zeroHeight"></div>
+          <div class="vMoney hardmode zeroHeight"></div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="poster_flex hardmode">
             <img class="image_poster square" src="Images/calbombaPixel.gif">
             <div class="poster_p">
@@ -113,6 +120,7 @@
             notable_projects?.txt
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="poster_flex hardmode vWhile">
             <img class="image_poster" width="200px" height="300px" src="Images/whileGame.png">
             <div class="poster_p">
@@ -141,6 +149,7 @@
             notable_projects?.txt
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="poster_flex hardmode vAngelFire">
             <div class="poster_p" style="text-align: left">
               <a href="https://jaimeow.itch.io/angel-fire" target="_blank">
@@ -216,6 +225,7 @@
             gif_dump.gif
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="hardmode vZombieGif">
             <p style="text-align: center;">
               My <span style="color: rgb(251, 242, 54);">javascript phase</span> was when I began making 'complete' games.
@@ -251,6 +261,7 @@
             gif_dump.gif
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="hardmode vSpellsGif">
             <div class="gif_row" id="pSpellsGif">
               <img src="Images/spells1.gif" class="washbear_gif">
@@ -334,6 +345,7 @@
             gif_dump.gif
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="hardmode vWhileDev">
             <p style="text-align: center; color: rgb(97, 162, 255);">
               <span id="pWhileDev">while(Game) development gifs</span>
@@ -358,6 +370,7 @@
             gif_dump.gif
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="gif_row">
             <img src="Images/while5.gif" class="washbear_gif">
             <img src="Images/while4.gif" class="washbear_gif">
@@ -391,6 +404,7 @@
             gif_dump.gif
             <div class="content_window_bar_button">X</div>
           </div>
+          <div class="vMoney hardmode zeroHeight"></div>
           <div class="hardmode vAFGif">
             <p style="text-align: center;">
               <span style="color: rgb(243, 97, 255);" id="pAFGif">Angel</span> <span style="color: rgb(255, 162, 0);">Fire</span> progress gifs
@@ -460,10 +474,19 @@
         <a href="#notableprojects" class="hardmode vTaverna vWhile vWashbear vAngelFire">Notable projects</a>
         <a href="#gifs" class="hardmode vWhileDev vAFGif vJokerGif vFavorGif vWashbearGif vTavernaGif vMolegameGif vSpellsGif vOfficeGif vZombieGif">Gifs</a>
         <a href="#hardmode"><span class="rainbowText">HARDMODE</span></a>
+        <div class="vMoney hardmode zeroHeight" id="pMoney">
+          <img src="Images/money.png" class="moneyAnim">
+          <p>
+            <span class="moneyAnim">M</span><span class="moneyAnim">o</span><span class="moneyAnim">n</span><span class="moneyAnim">e</span><span class="moneyAnim">y</span>
+            <br>
+            <span id="moneyCount" class="moneyAnim">0</span> <span class="moneyAnim">k</span><span class="moneyAnim">r</span>
+          </p>
+        </div>
       </div>
     </body>
   <script src="Title.js"></script>
   <script src="portfolio.js"></script>
   <script src="Dither.js"></script>
   <script src="WindowOpenScroll.js"></script>
+  <script src="money.js"></script>
 </html>

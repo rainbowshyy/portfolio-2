@@ -55,15 +55,15 @@ var grid = {
         for (var i = this.particles.length - 1; i >= 0; i--)
             {
                 this.particles[i].Update();
-                if (this.particles[i].y > 240)
+                if (this.particles[i].ShouldDie())
                     {
                         this.particles.pop();
                     }
             }
     },
-    doParticles : function(rect)
+    doParticles : function(rect, instensity, target, speed)
     {
-        var rand = Math.floor(Math.random() * 100) + 100;
+        var rand = Math.floor(Math.random() * instensity) + instensity;
         
         var xCenter = rect.left + rect.width / 2;
         var yCenter = rect.top + rect.height / 2;
@@ -86,22 +86,53 @@ var grid = {
                 yDir /= magnitude;
                 
                 var coords = ditherArea.screenToDither(x, y);
-                this.particles.push(new particle(coords[0], coords[1], Math.random() * xDir, Math.random() * yDir));
+                this.particles.push(new particle(coords[0], coords[1], Math.random() * xDir * speed, Math.random() * yDir * speed, target));
             }
     }
 };
 
-function particle(x,y,xVel,yVel)
+function particle(x,y,xVel,yVel, target)
 {
     this.x = x;
     this.y = y;
     this.xVel = xVel;
     this.yVel = yVel;
+    this.target = target !=  null ? ditherArea.screenToDither(target[0], target[1]) : null;
+    this.time = 0;
     this.Update = function()
     {
         this.x += this.xVel;
         this.y += this.yVel;
         this.yVel += 0.01;
+        if (this.target != null && this.time > 50)
+            { 
+                var xDir = this.target[0] - this.x;
+                var yDir = this.target[1] - this.y;
+                
+                var magnitude = Math.sqrt(xDir * xDir + yDir * yDir);
+                
+                xDir /= magnitude;
+                yDir /= magnitude;
+                
+                this.xVel *= 0.99;
+                this.yVel *= 0.99;
+                
+                this.xVel += xDir / Math.ceil(magnitude * 0.5) + xDir * 0.02;
+                this.yVel += yDir / Math.ceil(magnitude * 0.5) + yDir * 0.02;
+            }
+        this.time += 1;
+    };
+    
+    this.ShouldDie = function()
+    {
+        if (this.target != null)
+            {
+                if (Math.abs(this.target[0] - this.x) < 5 && Math.abs(this.target[1] - this.y) < 5)
+                    {
+                        return true;
+                    }
+                return this.y > 240 || this.time > 1000;
+            }
     };
     
     this.Draw = function()

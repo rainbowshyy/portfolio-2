@@ -17,6 +17,14 @@
       "visibility" : "vFiliokusExperience"
     },
     {
+      "name" : "Money",
+      "image" : "Images/coin.png",
+      "width" : 128,
+      "height" : 128,
+      "id" : "pMoney",
+      "visibility" : "vMoney"
+    },
+    {
       "name" : "Socials",
       "image" : "Images/2023.png",
       "width" : 120,

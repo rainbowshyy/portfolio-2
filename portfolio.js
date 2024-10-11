@@ -274,7 +274,7 @@ function simenState()
       setTimeout(function() {
         cameraShakeStep = 96;
         var rect = rectElement.getBoundingClientRect();
-        grid.doParticles(rect);
+        grid.doParticles(rect, 100, null, 1);
       }, 1250);
       found = null;
     }
@@ -388,6 +388,13 @@ var found;
 
 var pool = [];
 var started = false;
+var coinFuncs = [];
+function createCoinFunc(element) {
+  return function()
+  {
+    addMoney(element.getBoundingClientRect());
+  };
+}
 function hardmodeStart()
 {
   if (started)
@@ -408,6 +415,18 @@ function hardmodeStart()
           document.getElementsByClassName(portfolio[i].visibility)[x].classList.add("zeroHeight");
         }
       pool.push(i);
+    }
+  
+  var coins = document.getElementsByClassName("vMoney");
+  for (let c = 0; c < coins.length; c++)
+    {
+      if (coins[c].id != "pMoney")
+        {
+          coins[c].style.top = (Math.random() * 60 + 20) + "%";
+          coins[c].style.left = (Math.random() * 60 + 20) + "%";
+          var element = coins[c];
+          coins[c].addEventListener("click", addMoney.bind(this, coins[c]), false);
+        }
     }
   
   cameraShakeStep = 96;
