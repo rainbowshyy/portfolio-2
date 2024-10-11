@@ -14,7 +14,7 @@ var grid = {
                     {
                         this.pixels[y].push(0);
                         var rand = Math.random();
-                        this.weight[y].push(rand * rand + 0.2);
+                        this.weight[y].push(rand * rand * 0.5 + 0.1);
                     }
             }
     },
@@ -41,14 +41,14 @@ var grid = {
     },
     step : function()
     {
-        var vert = 1 / this.pixels.length;
         for (var x = 0; x < this.pixels.length; x++)
             {
                 for (var y = 0; y < this.pixels.length; y++)
                     {
                         if (this.pixels[x][y] < 1)
                             {
-                                this.pixels[x][y] += this.weight[x][y] * (Math.pow(y * vert, 2) * 0.5 + 0.02);
+                                var step = (ditherArea.landscape ? x : y) / this.pixels.length;
+                                this.pixels[x][y] += ditherArea.landscape ? this.weight[x][y] * (-1 * Math.pow(step, 2) + 1 * step) + 0.01 : this.weight[x][y] * (Math.pow(step, 2) + 0.01);
                             }
                     }
             }
