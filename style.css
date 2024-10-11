@@ -740,6 +740,29 @@ span.moneyAdd {
     flex-wrap: nowrap;
   }
   
+  #pMoney:not(.zeroHeight) {
+    position: fixed;
+    bottom: 0px;
+    visibility: visible;
+    height: 60px;
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    border: 4px solid rgb(242, 242, 242);
+    border-bottom: none;
+  }
+  
+  #pMoney > img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  #pMoney > p {
+    font-size: 1rem;
+    line-height: 150%;
+    margin: 1rem;
+  }
+  
   .image_display {
     width: 0px;
     margin: 0px;
