@@ -384,6 +384,7 @@ button {
   width: 100%;
   z-index: 100;
   animation: hardmodeTextAnimated 0.5s infinite alternate-reverse steps(2, end);
+  pointer-events: none;
 }
 
 .hardmodeText {
