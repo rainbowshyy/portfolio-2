@@ -48,7 +48,7 @@ var grid = {
                         if (this.pixels[x][y] < 1)
                             {
                                 var step = (ditherArea.landscape ? x : y) / this.pixels.length;
-                                this.pixels[x][y] += ditherArea.landscape ? this.weight[x][y] * (-1 * Math.pow(step, 2) + 1 * step) + 0.01 : this.weight[x][y] * (Math.pow(step, 2) + 0.01);
+                                this.pixels[x][y] += ditherArea.landscape ? this.weight[x][y] * (-1 * Math.pow(step, 2) + 1 * step) * 0.6 + 0.01 : this.weight[x][y] * (Math.pow(step, 2) + 0.01);
                             }
                     }
             }

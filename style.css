@@ -166,6 +166,10 @@ p {
   height: 200px;
 }
 
+.hint {
+  color: rgb(251, 242, 54);
+}
+
 iframe {
   width: 100%;
   height: 56.25%;
@@ -417,6 +421,47 @@ button {
 
 .vforest  {
   opacity: 0.0;
+}
+
+.combat {
+  position: relative;
+  width: 100%;
+  padding-top: calc(48rem * 0.5);
+  overflow: hidden;
+}
+
+.combatText {
+  text-align: center;
+  font-size: 2rem;
+  border: 0.25rem solid rgb(242, 242, 242);
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: calc(12rem * 0.5);
+  padding: 1rem;
+  white-space: nowrap;
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.grass {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: calc(8rem * 0.5);;
+  width: calc(128rem * 0.5);
+}
+
+.enemy {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(16rem * 0.5);
+}
+
+.enemy.blob {
+  width: calc(20rem * 0.5);
 }
 
 @keyframes hardmodeTextAnimated {

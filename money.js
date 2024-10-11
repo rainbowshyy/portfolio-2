@@ -7,6 +7,12 @@ function addMoney(rect)
     grid.doParticles(rect.getBoundingClientRect(), 40, target, 0.5);
     rect.style.display = "none";
     
+    setTimeout(updateMoney, 600);
+    
+}
+
+function updateMoney()
+{
     elem = document.getElementById("pMoney").getElementsByClassName("moneyAnim");
     for (var i = 0; i < elem.length; i++)
         {
@@ -18,5 +24,4 @@ function addMoney(rect)
     
     money += 1;
     document.getElementById("moneyCount").innerHTML = money;
-    
 }
