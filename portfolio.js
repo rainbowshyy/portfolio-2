@@ -252,7 +252,7 @@ function simenState()
           document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.transform = "scale(1,1.1)";
           document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.transformOrigin = "center";
           //document.getElementsByClassName(portfolio[foundIndex].visibility)[x].style.zIndex = 120;
-          if (x == 0)
+          if (x == 0 || (portfolio[foundIndex].visibility == "vMoney" && x == document.getElementsByClassName(portfolio[foundIndex].visibility).length - 1))
             {
               rectElement = document.getElementsByClassName(portfolio[foundIndex].visibility)[x];
             }
