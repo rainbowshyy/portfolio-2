@@ -351,7 +351,6 @@ canvas {
 }
 
 .hardmode {
-  opacity: 1.0;
   transition: opacity transform 1s cubic-bezier(.91, .15, .91, .59);
 }
 
@@ -403,7 +402,7 @@ button {
 
 .zeroHeight {
   overflow: hidden;
-  height: 0px;
+  height: 0.1px;
   visibility: hidden;
   margin: 0px;
   padding: 0px;
