@@ -1,6 +1,14 @@
 {
   "hardmode": [
     {
+      "name" : "The forest...",
+      "image" : "Images/blob.gif",
+      "width" : 120,
+      "height" : 120,
+      "id" : "forest",
+      "visibility" : "vforest"
+    },
+    {
       "name" : "while(Game) development gifs",
       "image" : "Images/while6.gif",
       "width" : 320,
@@ -23,6 +31,14 @@
       "height" : 128,
       "id" : "pMoney",
       "visibility" : "vMoney"
+    },
+    {
+      "name" : "Shop",
+      "image" : "Images/shop.png",
+      "width" : 128,
+      "height" : 96,
+      "id" : "pShop",
+      "visibility" : "vShop"
     },
     {
       "name" : "Socials",
@@ -151,14 +167,6 @@
       "height" : 120,
       "id" : "showreel",
       "visibility" : "vShowreel"
-    },
-    {
-      "name" : "The forest...",
-      "image" : "Images/blob.gif",
-      "width" : 120,
-      "height" : 120,
-      "id" : "forest",
-      "visibility" : "vforest"
     }
   ]
 }

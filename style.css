@@ -434,14 +434,22 @@ button {
   overflow: hidden;
 }
 
-.combat {
+.combat, .room {
   position: relative;
   width: 100%;
   padding-top: calc(var(--combatSize) * 72);
   overflow: hidden;
 }
 
-.combatText {
+.combat {
+  padding-top: calc(var(--combatSize) * 72);
+}
+
+.room {
+  padding-top: calc(var(--combatSize) * 122);
+}
+
+.combatText, .roomText {
   text-align: center;
   font-size: calc(var(--combatSize) * 8);
   border: calc(var(--combatSize)) solid rgb(242, 242, 242);
@@ -449,11 +457,18 @@ button {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  top: calc(58 * var(--combatSize));
   padding: calc(6 * var(--combatSize));
   white-space: nowrap;
   margin: 0;
   padding-bottom: calc(4 * var(--combatSize));
+}
+
+.combatText {
+  top: calc(56 * var(--combatSize));
+}
+
+.roomText {
+  top: calc(108  * var(--combatSize));
 }
 
 .grass {
@@ -470,6 +485,15 @@ button {
   left: 50%;
   transform: translateX(-50%);
   top: calc(12 * var(--combatSize));
+}
+
+.backdrop {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(128 * var(--combatSize));
+  height: calc(96 * var(--combatSize));
+  top: calc(0 * var(--combatSize));
 }
 
 .enemy.blob {

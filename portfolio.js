@@ -81,6 +81,7 @@ var simenStateCount = 0;
 var simenScratchCount = 0;
 var waitingInput = false;
 var foundIndex;
+var chanceForest = 0.2;
 function simenState()
 {
   simenStateCount += 1;
@@ -205,6 +206,19 @@ function simenState()
       simen.frame = 19;
       simenStateCount = 0;
       var random = Math.floor(Math.random() * pool.length);
+      if (Math.random() < chanceForest)
+        {
+          chanceForest = -1;
+          random = 0;
+        }
+      else if (random == 0 && chanceForest > 0)
+        {
+          chanceForest = -1;
+        }
+      else if (random != 0 && chanceForest > 0)
+        {
+          chanceForest += 0.2;
+        }
       foundIndex = pool[random];
       pool.splice(random, 1);
       found = new visualObject(170 - portfolio[foundIndex].width / 8, 8, portfolio[foundIndex].width / 4, portfolio[foundIndex].height / 4, [portfolio[foundIndex].image]);

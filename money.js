@@ -24,4 +24,5 @@ function updateMoney()
     
     money += 1;
     document.getElementById("moneyCount").innerHTML = money;
+    document.getElementById("shopStatus").remove();
 }
