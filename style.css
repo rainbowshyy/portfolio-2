@@ -7,6 +7,10 @@
 
 }
 
+:root {
+  --combatSize : 1vw * 0.25;
+}
+
 html {
   overflow: hidden;
   overflow-x: hidden;
@@ -170,16 +174,27 @@ p {
   color: rgb(251, 242, 54);
 }
 
-iframe {
+.wholeWindow {
   width: 100%;
-  height: 56.25%;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
   font-style: normal;
-  margin: 2%;
+  margin: 1rem;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -195,7 +210,7 @@ h2 {
 
 li {
   font-size: 1rem;
-  line-height: 100%;
+  line-height: 1rem;
   margin: 1rem;
 }
 
@@ -419,49 +434,46 @@ button {
   overflow: hidden;
 }
 
-.vforest  {
-  opacity: 0.0;
-}
-
 .combat {
   position: relative;
   width: 100%;
-  padding-top: calc(48rem * 0.5);
+  padding-top: calc(var(--combatSize) * 72);
   overflow: hidden;
 }
 
 .combatText {
   text-align: center;
-  font-size: 2rem;
-  border: 0.25rem solid rgb(242, 242, 242);
+  font-size: calc(var(--combatSize) * 8);
+  border: calc(var(--combatSize)) solid rgb(242, 242, 242);
   width: fit-content;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  bottom: calc(12rem * 0.5);
-  padding: 1rem;
+  top: calc(58 * var(--combatSize));
+  padding: calc(6 * var(--combatSize));
   white-space: nowrap;
-  margin: 1rem;
-  padding-bottom: 0.5rem;
+  margin: 0;
+  padding-bottom: calc(4 * var(--combatSize));
 }
 
 .grass {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  bottom: calc(8rem * 0.5);;
-  width: calc(128rem * 0.5);
+  top: calc(8 * var(--combatSize));;
+  width: calc(128 * var(--combatSize));
+  height: calc(32 * var(--combatSize));
 }
 
 .enemy {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(16rem * 0.5);
+  top: calc(12 * var(--combatSize));
 }
 
 .enemy.blob {
-  width: calc(20rem * 0.5);
+  width: calc(20 * var(--combatSize));
 }
 
 @keyframes hardmodeTextAnimated {
@@ -611,6 +623,11 @@ span.moneyAdd {
     width: 64px;
     height: 64px;
   }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
   .content_window_bar_button {
     right: -2;
     top: -2;
@@ -758,6 +775,15 @@ span.moneyAdd {
     overflow: auto;
     overflow-x: hidden;
   }
+  
+  #nameWindow {
+    overflow: hidden;
+    height: 0.1px;
+    visibility: hidden;
+    margin: 0px;
+    padding: 0px;
+  }
+  
   body {
     position: relative;
     display: inline;
@@ -771,6 +797,18 @@ span.moneyAdd {
     scroll-behavior: smooth;
   }
 
+  p, li {
+    font-size: 0.75rem;
+  }
+  
+  p, h1, h2 {
+    margin: 1rem;
+  }
+  
+  :root {
+    --combatSize : 0.5vw
+  }
+  
   .sidebar {
     height: 100px;
     flex-direction: row;
@@ -821,13 +859,11 @@ span.moneyAdd {
     scroll-behavior: smooth;
     overflow-y: inherit;
   }
+  
   #navigation {
     visibility: hidden;
   }
-  p {
-    font-size: 16px;
-    line-height: 32px;
-  }
+  
   .sidebar > p {
     font-size: 16px;
     text-align: center;
@@ -836,13 +872,7 @@ span.moneyAdd {
     margin-left: 4px;
     flex-basis: 50%;
   }
-  li {
-    font-size: 16px;
-    line-height: 32px;
-  }
-  h1 {
-    font-size: 48px;
-  }
+  
   .social_button_icon {
     width: 64px;
     height: 64px;
@@ -856,7 +886,7 @@ span.moneyAdd {
   
   .social_buttons {
     width: auto;
-    flex-basis: 35%;
+    flex-basis: 50%;
   }
   #thisisme {
     visibility: hidden;
@@ -867,7 +897,7 @@ span.moneyAdd {
   
   #thisismeMobile {
     visibility: visible;
-    flex-basis: 65%;
+    flex-basis: 60%;
     font-size:12px;
     text-align: center;
     align-content: center;
@@ -904,6 +934,10 @@ span.moneyAdd {
 
 @media only screen and (max-width:720px)
 {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
   .gif_row {
     flex-direction: column;
   }
@@ -911,22 +945,14 @@ span.moneyAdd {
   .gif_row > img {
     margin: 16px;
   }
-}
-
-@media only screen and (max-width:600px)
-{
-  h1 {
-    font-size: 24px;
-  }
-  iframe {
-    height: 280px;
-  }
+  
   .poster_flex {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     align-items: center;
   }
+  /*
   .social_button_icon {
     width: 32px;
     height: 32px;
@@ -935,6 +961,7 @@ span.moneyAdd {
     width: 32px;
     height: 32px;
   }
+  */
   .sidebar > p {
     right: 16;
     top: 120;
@@ -944,12 +971,9 @@ span.moneyAdd {
     margin: auto;
     margin-right: 2px;
     margin-left: 2px;
-    flex-basis: 50%;
+    flex-basis: 40%;
   }
   
-  li {
-    line-height: 32px;
-  }
   canvas {
     transform: scale(1, 1);
     left: 0;
@@ -966,12 +990,6 @@ span.moneyAdd {
     bottom: 0px;
   }
 }
-@media only screen and (max-width:390px)
-{
-  h1 {
-    font-size: 16px;
-  }
-}
 
 @media only screen and (max-width:300px)
 {
@@ -980,22 +998,5 @@ span.moneyAdd {
     height: 80px;
     margin-left: 16px;
     margin-top: 8px;
-  }
-  .sidebar {
-    height: 120px;
-  }
-  p {
-    font-size: 8px;
-    line-height: 16px;
-  }
-  .sidebar > p {
-    width: 100%;
-    top: 100;
-    position: absolute;
-    font-size: 8px;
-  }
-  li {
-    font-size: 8px;
-    line-height: 32px;
   }
 }
